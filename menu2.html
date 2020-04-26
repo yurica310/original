@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ハンバーガーメニューその２</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family:Verdana,sans-serif;
+            background: #eee;
+            color: #333;
+            padding: 8px;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        #cover{
+            background-color: #333;
+            opacity: 0.6;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            display: none;
+        }
+        #menu {
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            right: -180px;
+            color: #fff;
+            background-color:#4c81e9;
+            padding: 8px;
+            box-sizing: border-box;
+            width: 180px;
+            min-height: 100%;
+            transition: 0.4s;
+              }
+        #show, #hide{
+            float: right;
+            cursor: pointer;
+        }
+        body.menu-open #cover{
+            display: block;
+        }
+        body.menu-open{
+            overflow-y: hidden;
+        }
+        body.menu-open #menu{
+            display: block;
+            right: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="main">
+        <i class="fa fa-bars" id="show"></i>
+        <h1>HELLO</h1>
+
+        <p>Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!
+            Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!
+            Hello World!Hello World!
+        </p>
+        <p>Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!
+            Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!
+            Hello World!Hello World!
+        </p>
+        <p>Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!
+            Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!
+            Hello World!Hello World!
+        </p>
+        <p>Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!
+            Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!
+            Hello World!Hello World!
+        </p>
+    </div>
+
+    <div id="cover"></div>
+
+    <div id="menu">
+        <i class="fa fa-times" id="hide"></i>
+        <ul>
+            <li>MENU</li>
+            <li>MENU</li>
+            <li>MENU</li>
+            <li>MENU</li>
+            <li>MENU</li>
+        </ul>
+
+    </div>
+
+    <script>
+        (function(){
+            'use strict';
+
+            var show = document.getElementById('show');
+            var hide = document.getElementById('hide');
+
+            show.addEventListener('click', function(){
+                document.body.className = 'menu-open';
+            });    
+            hide.addEventListener('click', function(){
+                document.body.className = '';
+            });
+        })();
+    </script>
+    
+</body>
+</html>
